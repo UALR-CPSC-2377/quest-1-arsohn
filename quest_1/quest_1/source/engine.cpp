@@ -30,7 +30,19 @@ loadBlockData (
         p_objects with the appropriate data.
     */
 
-    return 0; // placeholder
+
+	std::ifstream inFile;
+	inFile.open(p_gameFile); // open file specified by command line arguement
+
+	int index = 0;
+	while (!inFile.eof()) {
+		inFile >> p_objects[index].spriteID;
+		index++;
+	}
+
+
+
+    return index + 1;
 }
 
 void
